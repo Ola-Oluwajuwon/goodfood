@@ -1,31 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import {
-  BarChart3,
-  ShoppingCart,
-  Menu,
-  MessageSquare,
-  Settings,
-  CreditCard,
-  Users,
-  HelpCircle,
-  X,
-} from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const menuItems = [
-  { icon: BarChart3, label: "Dashboard", active: true },
-  { icon: ShoppingCart, label: "Food Order", active: false },
-  { icon: Menu, label: "Manage Menu", active: false },
-  { icon: MessageSquare, label: "Customer Review", active: false },
+  { icon: "/icons/chart.svg", label: "Dashboard", active: true },
+  { icon: "/icons/buy.svg", label: "Food Order", active: false },
+  { icon: "/icons/document.svg", label: "Manage Menu", active: false },
+  { icon: "/icons/chat.svg", label: "Customer Review", active: false },
 ];
 
 const otherItems = [
-  { icon: Settings, label: "Settings", active: false },
-  { icon: CreditCard, label: "Payment", active: false },
-  { icon: Users, label: "Accounts", active: false },
-  { icon: HelpCircle, label: "Help", active: false },
+  { icon: "/icons/setting.svg", label: "Settings", active: false },
+  { icon: "/icons/wallet.svg", label: "Payment", active: false },
+  { icon: "/icons/profile.svg", label: "Accounts", active: false },
+  { icon: "/icons/infosquare.svg", label: "Help", active: false },
 ];
 
 export default function Sidebar() {
@@ -81,7 +71,6 @@ export default function Sidebar() {
             <p className="text-[#9FA2B4] text-xs mb-4 tracking-wide">MENU</p>
             <nav className="space-y-1">
               {menuItems.map((item) => {
-                const Icon = item.icon;
                 return (
                   <button
                     key={item.label}
@@ -91,10 +80,12 @@ export default function Sidebar() {
                         : "text-[#9FA2B4] hover:bg-[#E6E8EC] hover:text-[#6C5DD3]"
                     }`}
                   >
-                    <Icon
-                      size={20}
-                      strokeWidth={2}
-                      fill={item.active ? "currentColor" : "none"}
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
                     />
                     <span className="text-sm font-medium">{item.label}</span>
                   </button>
@@ -108,13 +99,18 @@ export default function Sidebar() {
             <p className="text-[#9FA2B4] text-xs mb-4 tracking-wide">OTHERS</p>
             <nav className="space-y-1">
               {otherItems.map((item) => {
-                const Icon = item.icon;
                 return (
                   <button
                     key={item.label}
                     className="w-full flex items-center gap-3 px-3 py-2.5 rounded-[5px] text-[#9FA2B4] hover:bg-[#E6E8EC] hover:text-[#6C5DD3] transition-all duration-200 cursor-pointer"
                   >
-                    <Icon size={20} strokeWidth={2} fill="none" />
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
                     <span className="text-sm font-medium">{item.label}</span>
                   </button>
                 );
