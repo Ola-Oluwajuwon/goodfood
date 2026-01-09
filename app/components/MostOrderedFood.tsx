@@ -1,19 +1,21 @@
 "use client";
 
+import Image from "next/image";
+
 const foods = [
-  { name: "Fresh Salad Bowl", price: 45000, image: "🥗" },
-  { name: "Chicken Noodles", price: 75000, image: "🍜" },
-  { name: "Smoothie Fruits", price: 45000, image: "🥤" },
-  { name: "Hot Chicken Wings", price: 45000, image: "🍗" },
+  { name: "Fresh Salad Bowl", price: 45000, image: "/imgs/salad.png" },
+  { name: "Chicken Noodles", price: 75000, image: "/imgs/chickennoodles.png" },
+  { name: "Smoothie Fruits", price: 45000, image: "/imgs/smoothies.png" },
+  { name: "Hot Chicken Wings", price: 45000, image: "/imgs/chickenwings.png" },
 ];
 
 export default function MostOrderedFood() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm">
-      <h3 className="text-gray-800 font-semibold text-lg mb-2">
+    <div className="bg-white p-6">
+      <h3 className="text-black font-normal text-sm leading-5.5 tracking-[0.5px] mb-2">
         Most Ordered Food
       </h3>
-      <p className="text-sm text-gray-500 mb-6">
+      <p className="text-gray-500 font-normal text-xs leading-5.5 tracking-[0.5px] mb-6">
         Adipiscing elit, sed do eiusmod tempor
       </p>
 
@@ -21,17 +23,28 @@ export default function MostOrderedFood() {
         {foods.map((food, index) => (
           <div
             key={index}
-            className="flex items-center justify-between px-3 py-4 hover:bg-gray-50 rounded-xl transition-colors cursor-pointer group"
+            className="flex items-center justify-between px-3 py-4"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-3xl shadow-sm">
-                {food.image}
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden"
+                style={{
+                  boxShadow: "0px 10px 20px 0px rgba(64, 72, 82, 0.35)",
+                }}
+              >
+                <Image
+                  src={food.image}
+                  alt={food.name}
+                  width={56}
+                  height={56}
+                  className="object-cover"
+                />
               </div>
-              <span className="text-gray-800 font-medium text-base group-hover:text-[#6C5DD3] transition-colors">
+              <span className="text-[#273240] font-normal text-xs leading-5 tracking-[0.5px]">
                 {food.name}
               </span>
             </div>
-            <span className="text-gray-600 font-semibold">
+            <span className="text-[#273240] font-normal text-xs leading-5 tracking-[0.5px]">
               IDR {food.price.toLocaleString()}
             </span>
           </div>

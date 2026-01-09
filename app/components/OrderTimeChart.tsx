@@ -57,10 +57,10 @@ const CustomTooltip = ({
           className="px-4 py-3 rounded-lg shadow-xl text-white"
           style={{ backgroundColor: "#37375C" }}
         >
-          <p className="font-medium text-xs leading-[13px] tracking-[0.3px] mb-1">
+          <p className="font-medium text-xs leading-3.25 tracking-[0.3px] mb-1">
             {item.name}
           </p>
-          <p className="font-normal text-xs leading-[12px] tracking-[0.3px] mb-2">
+          <p className="font-normal text-xs leading-3 tracking-[0.3px] mb-2">
             {item.time}
           </p>
           <p className="font-medium text-base leading-4 tracking-[0.3px]">
