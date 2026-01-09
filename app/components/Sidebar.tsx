@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { X } from "lucide-react";
 
 const menuItems = [
   { icon: "/icons/chart.svg", label: "Dashboard", active: true },
