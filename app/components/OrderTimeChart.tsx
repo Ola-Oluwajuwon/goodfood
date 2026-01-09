@@ -26,12 +26,22 @@ const data = [
   },
 ];
 
+interface TooltipPayload {
+  payload: {
+    name: string;
+    value: number;
+    time: string;
+    orders: number;
+    color: string;
+  };
+}
+
 const CustomTooltip = ({
   active,
   payload,
 }: {
   active?: boolean;
-  payload?: any[];
+  payload?: TooltipPayload[];
 }) => {
   if (active && payload && payload.length) {
     const item = payload[0].payload;

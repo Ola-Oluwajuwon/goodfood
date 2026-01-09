@@ -13,7 +13,7 @@ export default function Home() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-1 ml-0 lg:ml-[220px]">
+      <div className="flex-1 ml-0 lg:ml-55">
         {/* Header */}
         <Header />
 

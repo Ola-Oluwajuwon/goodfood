@@ -20,12 +20,21 @@ const data = [
   { day: "06", last6Days: 88, lastWeek: 85 },
 ];
 
+interface TooltipPayload {
+  payload: {
+    day: string;
+    last6Days: number;
+    lastWeek: number;
+  };
+  value: number;
+}
+
 const CustomTooltip = ({
   active,
   payload,
 }: {
   active?: boolean;
-  payload?: any[];
+  payload?: TooltipPayload[];
 }) => {
   if (active && payload && payload.length) {
     return (
