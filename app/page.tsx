@@ -35,27 +35,27 @@ export default function Home() {
             {/* Grid Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-3">
               {/* Revenue Chart - Spans 2 columns */}
-              <div className="lg:col-span-2 lg:border-r lg:border-b lg:border-gray-200 p-3 lg:p-6">
+              <div className="lg:col-span-2 lg:border-r lg:border-b lg:border-gray-200 p-0 lg:p-6">
                 <RevenueChart />
               </div>
 
               {/* Order Time Chart */}
-              <div className="lg:col-span-1 lg:border-b lg:border-gray-200 p-3 lg:p-6">
+              <div className="lg:col-span-1 lg:border-b lg:border-gray-200 p-0 lg:p-6">
                 <OrderTimeChart />
               </div>
 
               {/* Rating Bubbles */}
-              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-3 lg:p-6">
+              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-0 lg:p-6">
                 <RatingBubbles />
               </div>
 
               {/* Most Ordered Food */}
-              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-3 lg:p-6">
+              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-0 lg:p-6">
                 <MostOrderedFood />
               </div>
 
               {/* Order Chart */}
-              <div className="lg:col-span-1 p-3 lg:p-6">
+              <div className="lg:col-span-1 p-0 lg:p-6">
                 <OrderChart />
               </div>
             </div>

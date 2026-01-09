@@ -55,7 +55,7 @@ const CustomTooltip = ({
 
 export default function RevenueChart() {
   return (
-    <div className="bg-white rounded-2xl py-6 pr-6 pl-0 max-w-2xl">
+    <div className="bg-white rounded-2xl py-3 lg:py-6 lg:pr-6 pl-0 max-w-2xl">
       <div className="flex justify-between items-start mb-6">
         <div>
           <h3 className="text-black mb-3">Revenue</h3>

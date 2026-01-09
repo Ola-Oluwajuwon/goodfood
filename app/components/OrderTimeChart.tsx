@@ -85,7 +85,7 @@ const CustomTooltip = ({
 
 export default function OrderTimeChart() {
   return (
-    <div className="bg-white rounded-2xl p-6">
+    <div className="bg-white rounded-2xl lg:p-6 py-6 lg:py-0">
       <div className="flex justify-between items-start mb-2">
         <div>
           <h3 className="text-black mb-3">Order Time</h3>

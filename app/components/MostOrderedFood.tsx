@@ -11,7 +11,7 @@ const foods = [
 
 export default function MostOrderedFood() {
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white py-6 lg:py-0 lg:p-6">
       <h3 className="text-black font-normal text-sm leading-5.5 tracking-[0.5px] mb-2">
         Most Ordered Food
       </h3>

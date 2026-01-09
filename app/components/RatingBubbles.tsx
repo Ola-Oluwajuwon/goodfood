@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function RatingBubbles() {
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white py-6 lg:py-0 lg:p-6">
       <h3 className="text-black mb-3">Your Rating</h3>
       <p className="text-xs text-gray-500 mb-4">
         Lorem ipsum dolor sit amet, consectetur

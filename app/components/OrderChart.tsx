@@ -59,7 +59,7 @@ const CustomTooltip = ({
 
 export default function OrderChart() {
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white lg:p-6 py-6 lg:py-0 mb-8 lg:mb-0">
       <div className="flex justify-between items-start mb-6">
         <div>
           <h3 className="text-black mb-3">Order</h3>
