@@ -10,14 +10,15 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import Image from "next/image";
 
 const data = [
-  { day: "01", last6Days: 45, lastWeek: 50 },
-  { day: "02", last6Days: 52, lastWeek: 65 },
-  { day: "03", last6Days: 68, lastWeek: 55 },
-  { day: "04", last6Days: 65, lastWeek: 75 },
-  { day: "05", last6Days: 48, lastWeek: 68 },
-  { day: "06", last6Days: 88, lastWeek: 85 },
+  { day: "01", last6Days: 33, lastWeek: 50 },
+  { day: "02", last6Days: 20, lastWeek: 83 },
+  { day: "03", last6Days: 66, lastWeek: 33 },
+  { day: "04", last6Days: 60, lastWeek: 83 },
+  { day: "05", last6Days: 33, lastWeek: 50 },
+  { day: "06", last6Days: 100, lastWeek: 83 },
 ];
 
 interface TooltipPayload {
@@ -58,24 +59,31 @@ const CustomTooltip = ({
 
 export default function OrderChart() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm">
+    <div className="bg-white p-6">
       <div className="flex justify-between items-start mb-6">
         <div>
-          <h3 className="text-gray-800 font-semibold text-lg mb-3">Order</h3>
+          <h3 className="text-black mb-3">Order</h3>
           <p className="text-3xl font-bold text-gray-900 mb-2">2.568</p>
-          <p className="text-sm text-red-600 font-medium">
-            ↓ 2.1% vs last week
+          <p className="text-sm font-medium flex items-center gap-1">
+            <Image
+              src="/imgs/arrowdown.svg"
+              alt="decrease"
+              width={9}
+              height={12}
+            />
+            <span className="text-red-600">2.1%</span>{" "}
+            <span className="text-gray-400">vs last week</span>
           </p>
         </div>
-        <button className="text-[#6C5DD3] text-sm font-medium hover:underline">
+        <button className="w-27.25 h-8 rounded-[5px] border-[0.5px] border-[#DDE4F0] shadow-[0px_2px_1px_0px_#4048520D] font-medium text-xs leading-5 tracking-[0.5px] text-[#5A6ACF] hover:cursor-pointer hover:bg-gray-50 transition-colors">
           View Report
         </button>
       </div>
 
-      <p className="text-sm text-gray-500 mb-4">Sales from 1-6 Dec, 2020</p>
+      <p className="text-xs text-gray-500 mb-4">Sales from 1-6 Dec, 2020</p>
 
       <ResponsiveContainer width="100%" height={200}>
-        <LineChart data={data}>
+        <LineChart data={data} margin={{ left: 0, right: 0 }}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="#f0f0f0"
@@ -83,36 +91,37 @@ export default function OrderChart() {
           />
           <XAxis
             dataKey="day"
-            axisLine={false}
+            axisLine={{ stroke: "#f0f0f0" }}
             tickLine={false}
             tick={{ fill: "#9FA2B4", fontSize: 12 }}
+            padding={{ left: 0, right: 0 }}
           />
           <YAxis hide />
           <Tooltip content={<CustomTooltip />} />
           <Legend
             wrapperStyle={{ paddingTop: "20px" }}
             iconType="circle"
+            iconSize={8}
+            align="left"
             formatter={(value) => (
-              <span className="text-sm text-gray-600">
+              <span className="text-xs text-gray-600">
                 {value === "last6Days" ? "Last 6 days" : "Last Week"}
               </span>
             )}
           />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="last6Days"
             stroke="#6C5DD3"
             strokeWidth={3}
-            dot={{ fill: "#6C5DD3", r: 5 }}
-            activeDot={{ r: 7 }}
+            dot={false}
           />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="lastWeek"
             stroke="#DFE0EB"
             strokeWidth={3}
-            dot={{ fill: "#DFE0EB", r: 5 }}
-            activeDot={{ r: 7 }}
+            dot={false}
           />
         </LineChart>
       </ResponsiveContainer>
