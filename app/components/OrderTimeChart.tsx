@@ -52,31 +52,19 @@ const CustomTooltip = ({
       return null;
     }
     return (
-      <div className="relative">
-        <div
-          className="px-4 py-3 rounded-lg shadow-xl text-white"
-          style={{ backgroundColor: "#37375C" }}
-        >
-          <p className="font-medium text-xs leading-3.25 tracking-[0.3px] mb-1">
-            {item.name}
-          </p>
-          <p className="font-normal text-xs leading-3 tracking-[0.3px] mb-2">
-            {item.time}
-          </p>
-          <p className="font-medium text-base leading-4 tracking-[0.3px]">
-            {item.orders.toLocaleString()} orders
-          </p>
-        </div>
-        {/* Arrow pointer */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2 w-0 h-0"
-          style={{
-            bottom: "-8px",
-            borderLeft: "8px solid transparent",
-            borderRight: "8px solid transparent",
-            borderTop: "8px solid #37375C",
-          }}
-        ></div>
+      <div
+        className="px-4 py-3 rounded-lg shadow-xl text-white"
+        style={{ backgroundColor: "#37375C" }}
+      >
+        <p className="font-medium text-xs leading-3.25 tracking-[0.3px] mb-1">
+          {item.name}
+        </p>
+        <p className="font-normal text-xs leading-3 tracking-[0.3px] mb-2">
+          {item.time}
+        </p>
+        <p className="font-medium text-base leading-4 tracking-[0.3px]">
+          {item.orders.toLocaleString()} orders
+        </p>
       </div>
     );
   }
