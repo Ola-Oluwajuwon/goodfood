@@ -8,23 +8,25 @@ const data = [
     value: 40,
     time: "1pm - 4pm",
     orders: 1890,
-    color: "#6C5DD3",
-  },
-  {
-    name: "Evening",
-    value: 32,
-    time: "5pm - 8pm",
-    orders: 1520,
-    color: "#A8A3E8",
+    color: "#5A6ACF",
   },
   {
     name: "Morning",
     value: 28,
     time: "9am - 12pm",
     orders: 1330,
-    color: "#D5D2F5",
+    color: "#C7CEFF",
+  },
+  {
+    name: "Evening",
+    value: 32,
+    time: "5pm - 8pm",
+    orders: 1520,
+    color: "#8593ED",
   },
 ];
+
+const legendOrder = ["Afternoon", "Evening", "Morning"];
 
 interface TooltipPayload {
   payload: {
@@ -45,13 +47,36 @@ const CustomTooltip = ({
 }) => {
   if (active && payload && payload.length) {
     const item = payload[0].payload;
+    // Check if this is the main data (not the overlay)
+    if (!item.name || !item.time || !item.orders) {
+      return null;
+    }
     return (
-      <div className="bg-[#2D3958] text-white px-5 py-4 rounded-lg shadow-xl">
-        <p className="font-semibold text-base mb-1">{item.name}</p>
-        <p className="text-sm text-gray-300 mb-2">{item.time}</p>
-        <p className="text-lg font-bold">
-          {item.orders.toLocaleString()} orders
-        </p>
+      <div className="relative">
+        <div
+          className="px-4 py-3 rounded-lg shadow-xl text-white"
+          style={{ backgroundColor: "#37375C" }}
+        >
+          <p className="font-medium text-xs leading-[13px] tracking-[0.3px] mb-1">
+            {item.name}
+          </p>
+          <p className="font-normal text-xs leading-[12px] tracking-[0.3px] mb-2">
+            {item.time}
+          </p>
+          <p className="font-medium text-base leading-4 tracking-[0.3px]">
+            {item.orders.toLocaleString()} orders
+          </p>
+        </div>
+        {/* Arrow pointer */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 w-0 h-0"
+          style={{
+            bottom: "-8px",
+            borderLeft: "8px solid transparent",
+            borderRight: "8px solid transparent",
+            borderTop: "8px solid #37375C",
+          }}
+        ></div>
       </div>
     );
   }
@@ -60,15 +85,13 @@ const CustomTooltip = ({
 
 export default function OrderTimeChart() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm">
-      <div className="flex justify-between items-start mb-6">
+    <div className="bg-white rounded-2xl p-6">
+      <div className="flex justify-between items-start mb-2">
         <div>
-          <h3 className="text-gray-800 font-semibold text-lg mb-1">
-            Order Time
-          </h3>
-          <p className="text-sm text-gray-500">From 1-6 Dec, 2020</p>
+          <h3 className="text-black mb-3">Order Time</h3>
+          <p className="text-xs text-gray-500 mb-4">From 1-6 Dec, 2020</p>
         </div>
-        <button className="text-[#6C5DD3] text-sm font-medium hover:underline">
+        <button className="w-27.25 h-8 rounded-[5px] border-[0.5px] border-[#DDE4F0] shadow-[0px_2px_1px_0px_#4048520D] font-medium text-xs leading-5 tracking-[0.5px] text-[#5A6ACF] hover:cursor-pointer hover:bg-gray-50 transition-colors">
           View Report
         </button>
       </div>
@@ -82,9 +105,11 @@ export default function OrderTimeChart() {
               cy="50%"
               innerRadius={70}
               outerRadius={110}
-              paddingAngle={2}
+              paddingAngle={0}
               dataKey="value"
               strokeWidth={0}
+              startAngle={305} // ← Start from top (12 o'clock)
+              endAngle={665} // ← End at top (12 o'clock) after full circle
             >
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
@@ -97,20 +122,23 @@ export default function OrderTimeChart() {
 
       {/* Legend */}
       <div className="flex justify-center gap-8 mt-4">
-        {data.map((item) => (
-          <div key={item.name} className="flex items-center gap-2">
-            <div
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: item.color }}
-            ></div>
-            <div className="text-sm">
-              <span className="text-gray-700">{item.name}</span>
-              <span className="text-gray-900 font-semibold ml-2">
-                {item.value}%
-              </span>
+        {legendOrder.map((name) => {
+          const item = data.find((d) => d.name === name)!;
+          return (
+            <div key={item.name} className="flex items-center gap-2">
+              <div
+                className="w-2 h-2 rounded-full"
+                style={{ backgroundColor: item.color }}
+              ></div>
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-600">{item.name}</span>
+                <span className="text-xs text-gray-600 font-semibold">
+                  {item.value}%
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
