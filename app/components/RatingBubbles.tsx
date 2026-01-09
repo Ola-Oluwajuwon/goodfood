@@ -16,7 +16,7 @@ export default function RatingBubbles() {
           alt="Rating Bubbles - Food Taste 85%, Hygiene 85%, Packaging 92%"
           width={500}
           height={400}
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-contain md:max-w-md lg:max-w-none mx-auto"
         />
       </div>
     </div>
