@@ -35,7 +35,7 @@ export default function Home() {
             {/* Grid Layout */}
             <div className="grid grid-cols-1 xl:grid-cols-3">
               {/* Revenue Chart - Spans 2 columns */}
-              <div className="xl:col-span-2 xl:border-r xl:border-b xl:border-gray-200 p-0 xl:p-6">
+              <div className="xl:col-span-2 xl:border-r xl:border-b xl:border-gray-200 p-0 xl:p-6 xl:pl-0">
                 <RevenueChart />
               </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
               </div>
 
               {/* Rating Bubbles */}
-              <div className="xl:col-span-1 xl:border-r xl:border-gray-200 p-0 xl:p-6">
+              <div className="xl:col-span-1 xl:border-r xl:border-gray-200 p-0 xl:p-6 xl:pl-0">
                 <RatingBubbles />
               </div>
 
