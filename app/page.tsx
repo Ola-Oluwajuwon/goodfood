@@ -22,40 +22,40 @@ export default function Home() {
         />
 
         {/* Main Content */}
-        <div className="flex-1 ml-0 lg:ml-60">
+        <div className="flex-1 ml-0 xl:ml-60">
           {/* Header */}
           <Header onMenuToggle={() => setIsSidebarOpen(!isSidebarOpen)} />
 
           {/* Dashboard Content */}
-          <main className="p-4 sm:p-6 lg:p-8 pt-20 lg:pt-4 sm:pt-20 lg:sm:pt-6">
+          <main className="p-4 sm:p-6 xl:p-8 pt-20 xl:pt-4 sm:pt-20 xl:sm:pt-6">
             <h1 className="text-xl font-medium text-gray-900 mb-6 sm:mb-8">
               Dashboard
             </h1>
 
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-3">
+            <div className="grid grid-cols-1 xl:grid-cols-3">
               {/* Revenue Chart - Spans 2 columns */}
-              <div className="lg:col-span-2 lg:border-r lg:border-b lg:border-gray-200 p-0 lg:p-6">
+              <div className="xl:col-span-2 xl:border-r xl:border-b xl:border-gray-200 p-0 xl:p-6">
                 <RevenueChart />
               </div>
 
               {/* Order Time Chart */}
-              <div className="lg:col-span-1 lg:border-b lg:border-gray-200 p-0 lg:p-6">
+              <div className="xl:col-span-1 xl:border-b xl:border-gray-200 p-0 xl:p-6">
                 <OrderTimeChart />
               </div>
 
               {/* Rating Bubbles */}
-              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-0 lg:p-6">
+              <div className="xl:col-span-1 xl:border-r xl:border-gray-200 p-0 xl:p-6">
                 <RatingBubbles />
               </div>
 
               {/* Most Ordered Food */}
-              <div className="lg:col-span-1 lg:border-r lg:border-gray-200 p-0 lg:p-6">
+              <div className="xl:col-span-1 xl:border-r xl:border-gray-200 p-0 xl:p-6">
                 <MostOrderedFood />
               </div>
 
               {/* Order Chart */}
-              <div className="lg:col-span-1 p-0 lg:p-6">
+              <div className="xl:col-span-1 p-0 xl:p-6">
                 <OrderChart />
               </div>
             </div>

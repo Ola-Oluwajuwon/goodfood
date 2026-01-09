@@ -12,11 +12,11 @@ export default function Header({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 sm:px-6 lg:px-8 gap-4 fixed lg:relative top-0 left-0 right-0 z-30 lg:z-auto">
+    <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 sm:px-6 xl:px-8 gap-4 fixed xl:relative top-0 left-0 right-0 z-30 xl:z-auto">
       {/* Hamburger Menu Button (Mobile) */}
       <button
         onClick={onMenuToggle}
-        className="lg:hidden text-[#6C5DD3] hover:bg-gray-50 p-2 rounded-lg transition-colors"
+        className="xl:hidden text-[#6C5DD3] hover:bg-gray-50 p-2 rounded-lg transition-colors"
       >
         <Menu size={24} />
       </button>

@@ -29,21 +29,21 @@ export default function Sidebar({
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 xl:hidden"
           onClick={onToggle}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`w-60 bg-[#F8F9FC] h-screen fixed left-0 top-0 flex flex-col z-50 transition-transform duration-300 lg:translate-x-0 ${
+        className={`w-60 bg-[#F8F9FC] h-screen fixed left-0 top-0 flex flex-col z-50 transition-transform duration-300 xl:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Close Button (Mobile) */}
         <button
           onClick={onToggle}
-          className="absolute top-4 right-4 lg:hidden text-gray-600 hover:text-gray-800"
+          className="absolute top-4 right-4 xl:hidden text-gray-600 hover:text-gray-800"
         >
           <X size={24} />
         </button>
