@@ -18,26 +18,20 @@ const otherItems = [
   { icon: "/icons/infosquare.svg", label: "Help", active: false },
 ];
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Sidebar({
+  isOpen,
+  onToggle,
+}: {
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
     <>
-      {/* Mobile Menu Button */}
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="fixed top-4 left-4 z-60 lg:hidden bg-[#6C5DD3] text-white p-2 rounded-lg shadow-lg"
-        >
-          <Menu size={24} />
-        </button>
-      )}
-
       {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={() => setIsOpen(false)}
+          onClick={onToggle}
         />
       )}
 
@@ -49,7 +43,7 @@ export default function Sidebar() {
       >
         {/* Close Button (Mobile) */}
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={onToggle}
           className="absolute top-4 right-4 lg:hidden text-gray-600 hover:text-gray-800"
         >
           <X size={24} />
