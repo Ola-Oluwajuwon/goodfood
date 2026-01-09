@@ -24,12 +24,14 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-60 lg:hidden bg-[#6C5DD3] text-white p-2 rounded-lg shadow-lg"
-      >
-        <Menu size={24} />
-      </button>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="fixed top-4 left-4 z-60 lg:hidden bg-[#6C5DD3] text-white p-2 rounded-lg shadow-lg"
+        >
+          <Menu size={24} />
+        </button>
+      )}
 
       {/* Overlay */}
       {isOpen && (
@@ -43,7 +45,7 @@ export default function Sidebar() {
       <aside
         className={`w-60 bg-[#F8F9FC] h-screen fixed left-0 top-0 flex flex-col z-50 transition-transform duration-300 lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:flex`}
+        }`}
       >
         {/* Close Button (Mobile) */}
         <button
