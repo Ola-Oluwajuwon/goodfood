@@ -1,8 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GoodFood Dashboard
+
+A modern, responsive analytics dashboard for a food ordering platform built with Next.js and TypeScript.
+
+## Features
+
+- **Order Analytics** - Visualize order trends and patterns over time
+- **Revenue Tracking** - Monitor revenue performance with interactive charts
+- **Time-based Insights** - Analyze orders by time of day (Morning, Afternoon, Evening)
+- **Popular Items** - Track most ordered food items
+- **Customer Ratings** - View customer satisfaction metrics
+- **Responsive Design** - Optimized for desktop and mobile devices
+
+## Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org) (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Charts:** Recharts
+- **Font:** Geist (via next/font)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +53,43 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a production build:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+├── components/          # Dashboard components
+│   ├── Header.tsx
+│   ├── Sidebar.tsx
+│   ├── OrderChart.tsx
+│   ├── OrderTimeChart.tsx
+│   ├── RevenueChart.tsx
+│   ├── RatingBubbles.tsx
+│   └── MostOrderedFood.tsx
+├── layout.tsx          # Root layout
+├── page.tsx            # Dashboard home page
+└── globals.css         # Global styles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+public/
+├── charts/             # Chart assets
+├── icons/              # Icon assets
+└── imgs/               # Image assets
+```
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is private and proprietary.
