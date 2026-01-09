@@ -20,7 +20,7 @@ export default function Home() {
 
           {/* Dashboard Content */}
           <main className="p-4 sm:p-6 lg:p-8">
-            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
+            <h1 className="text-xl font-medium text-gray-900 mb-6 sm:mb-8">
               Dashboard
             </h1>
 
