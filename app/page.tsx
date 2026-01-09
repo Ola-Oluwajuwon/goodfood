@@ -8,49 +8,51 @@ import OrderChart from "./components/OrderChart";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen bg-[#F8F9FC]">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex min-h-screen bg-white justify-center">
+      <div className="flex w-full max-w-360 relative">
+        {/* Sidebar */}
+        <Sidebar />
 
-      {/* Main Content */}
-      <div className="flex-1 ml-0 lg:ml-55">
-        {/* Header */}
-        <Header />
+        {/* Main Content */}
+        <div className="flex-1 ml-0 lg:ml-60">
+          {/* Header */}
+          <Header />
 
-        {/* Dashboard Content */}
-        <main className="p-4 sm:p-6 lg:p-8">
-          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
-            Dashboard
-          </h1>
+          {/* Dashboard Content */}
+          <main className="p-4 sm:p-6 lg:p-8">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
+              Dashboard
+            </h1>
 
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Revenue Chart - Spans 2 columns */}
-            <div className="lg:col-span-2">
-              <RevenueChart />
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Revenue Chart - Spans 2 columns */}
+              <div className="lg:col-span-2">
+                <RevenueChart />
+              </div>
+
+              {/* Order Time Chart */}
+              <div className="lg:col-span-1">
+                <OrderTimeChart />
+              </div>
+
+              {/* Rating Bubbles */}
+              <div className="lg:col-span-1">
+                <RatingBubbles />
+              </div>
+
+              {/* Most Ordered Food */}
+              <div className="lg:col-span-1">
+                <MostOrderedFood />
+              </div>
+
+              {/* Order Chart */}
+              <div className="lg:col-span-1">
+                <OrderChart />
+              </div>
             </div>
-
-            {/* Order Time Chart */}
-            <div className="lg:col-span-1">
-              <OrderTimeChart />
-            </div>
-
-            {/* Rating Bubbles */}
-            <div className="lg:col-span-1">
-              <RatingBubbles />
-            </div>
-
-            {/* Most Ordered Food */}
-            <div className="lg:col-span-1">
-              <MostOrderedFood />
-            </div>
-
-            {/* Order Chart */}
-            <div className="lg:col-span-1">
-              <OrderChart />
-            </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
     </div>
   );
